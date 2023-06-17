@@ -36,7 +36,7 @@ void main(List<String> args) {
     if (inpt == null) return;
     name = inpt;
 
-    print("Nice to meet you ${name}, Can I have your age please...\n");
+    stdout.write("Nice to meet you ${name}, Can I have your age please...\n>");
     inpt = stdin.readLineSync();
     if (inpt == null) return;
     inpt = inpt.toLowerCase();

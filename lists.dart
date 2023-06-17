@@ -12,19 +12,19 @@ void main(List<String> arg) {
   print("************ Printing Value Less than 5 ************");
 
   print("Traditional for loop with linier increment variable");
-  for (var i = 0; i < collection.length; i++) {
+  for (int i = 0; i < collection.length; i++) {
     if (collection[i] >= 5) stdout.write("${collection[i]} ");
   }
 
   print("\nTraditional for loop with 'in' operator");
-  for (var el in collection) {
+  for (int el in collection) {
     if (el >= 5) stdout.write("${el} ");
   }
 
   print("\nOne line version");
 
   print([
-    for (var el in collection)
+    for (int el in collection)
       if (el >= 5) el
   ]);
 }
