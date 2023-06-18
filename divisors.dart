@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 void main(List<String> args) {
   int inputNumber;
@@ -18,32 +17,34 @@ void main(List<String> args) {
   }
 
   printDivisors(inputNumber);
-  // divisorsBySieve(inputNumber);
+  divisorsBySieve(inputNumber);
 }
 
 void printDivisors(int number) {
-  stdout.write("Divisors: ");
+  if (number == 1) {
+    stdout.write("\nDivisors: 1 ");
+    return;
+  }
+  stdout.write("\nDivisors: 1 ");
   for (int i = 2; i < (number ~/ 2) + 1; i++) {
     if ((number % i) == 0) {
       stdout.write("${i} ");
     }
   }
+  stdout.write("${number}");
 }
 
-// String time is huge but actual ans is very fast
 void divisorsBySieve(int number) {
-  // 1000000000
-  int maxNum = 10000000;
+  int maxNum = number;
   var divisors = List.generate(maxNum + 1, (i) => [], growable: false);
-  print("End of push finite");
 
   for (int i = 1; i <= maxNum; ++i) {
     for (int j = i; j <= maxNum; j += i) {
       divisors[j].add(i);
     }
   }
-  print("End of push finite 2");
 
+  stdout.write("\nDivisors: ");
   for (var element in divisors[number]) {
     stdout.write("${element} ");
   }

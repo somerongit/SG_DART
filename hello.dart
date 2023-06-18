@@ -1,3 +1,9 @@
+typedef DoMath(int a, int b);
+add(int a, int b) => print("${a}+${b}=${a + b}");
+sub(int a, int b) => print("${a}-${b}=${a - b}");
+mult(int a, int b) => print("${a}*${b}=${a * b}");
+modulo(int a, int b) => print("${a}%${b}=${a % b}");
+
 void main() {
   final DEV_NAME = "Someron Bakuli";
   print("Hello, ${DEV_NAME}!");
@@ -15,6 +21,33 @@ void main() {
   print("Veg: Darosh = ${whatShouldICook("Darosh")}");
   print("Veg: Gajar = ${whatShouldICook("Gajar")}");
   print("Veg: Lanka = ${whatShouldICook("Lanka")}");
+
+  List<Object> hatarogenusList = ["", 78, 78.09, double.infinity];
+  print(hatarogenusList);
+
+  var list = List.filled(9, null, growable: false);
+  var lists = List.generate(9, (i) => null, growable: false);
+  print("${list} ${lists}");
+
+  Unicodes
+  String unicodes = "Someron Bakuli";
+  print(unicodes.runes);
+
+  unicodes.codeUnits.forEach((int u) {
+    print(u);
+  });
+  print(unicodes.codeUnits);
+  
+  // TypeDef
+  DoMath func = add;
+  func(7, 8);
+  func = sub;
+  func(7, 8);
+  func = mult;
+  func(7, 8);
+  func = modulo;
+  func(7, 8);
+
 }
 
 String whatShouldICook(String veg_name) {
