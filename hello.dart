@@ -29,7 +29,7 @@ void main() {
   var lists = List.generate(9, (i) => null, growable: false);
   print("${list} ${lists}");
 
-  Unicodes
+  // Unicodes
   String unicodes = "Someron Bakuli";
   print(unicodes.runes);
 
@@ -37,7 +37,7 @@ void main() {
     print(u);
   });
   print(unicodes.codeUnits);
-  
+
   // TypeDef
   DoMath func = add;
   func(7, 8);
@@ -47,7 +47,6 @@ void main() {
   func(7, 8);
   func = modulo;
   func(7, 8);
-
 }
 
 String whatShouldICook(String veg_name) {
